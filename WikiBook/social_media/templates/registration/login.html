@@ -1,7 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head%}
+    <link rel="stylesheet" href="{% static 'social_media/user_forms.css'%}">
+{% endblock %}
+
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Login" />
-</form>
+    <header>WikiBook, a different view from Wikipedia.</header>
+    <form method="post" id="login">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Login</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <input type="submit" value="Login" />
+        <a href="{% url 'social_media:register' %}">Create account</a>
+    </form>
 {% endblock %}

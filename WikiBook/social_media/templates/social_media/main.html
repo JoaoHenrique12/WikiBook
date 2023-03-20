@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    Hello <strong>{{ user.username | default:'Guest' }}</strong>, this is your feed.
-        
+    Hello <strong>{{ user.username }}</strong>, this is your feed.
+    
+    <a href="accounts/logout">Logout</a>
 {% endblock %}

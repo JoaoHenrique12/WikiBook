@@ -1,9 +1,11 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
 from .forms import *
 
+@login_required()
 def index(request):
     return render(request, 'social_media/main.html')
 
@@ -16,4 +18,7 @@ def register(request):
             user = form.save()
             form.save()
             login(request,user)
-            return redirect(reverse("index"))
+            return redirect(reverse("social_media:index"))
+        else:
+            print(form.errors)
+            return redirect(reverse("social_media:register"))

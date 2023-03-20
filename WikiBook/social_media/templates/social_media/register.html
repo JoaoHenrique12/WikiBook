@@ -1,6 +1,13 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
+{% extends 'base.html' %}
 
-    <input type="submit" value="Create User"/>
-</form>
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Create User</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <input type="submit" value="Create User"/>
+        <a href="{% url 'social_media:login' %}">Login page</a>
+    </form>
+{% endblock %}
