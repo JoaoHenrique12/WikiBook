@@ -7,11 +7,11 @@ from .forms import *
 
 @login_required()
 def index(request):
-    return render(request, 'social_media/main.html')
+    return render(request, 'social_media/index.html')
 
 def register(request):
     if request.method == "GET":
-        return render(request, 'social_media/register.html', {'form':RegistrationForm()})
+        return render(request, 'registration/register.html', {'form':RegistrationForm()})
     elif request.method == "POST":
         form = RegistrationForm(request.POST)
         if form.is_valid():
