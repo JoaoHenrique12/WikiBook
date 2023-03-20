@@ -21,4 +21,4 @@ def register(request):
             return redirect(reverse("social_media:index"))
         else:
             print(form.errors)
-            return redirect(reverse("social_media:register"))
+            return render(request, 'registration/register.html', { 'form':RegistrationForm(), 'field_errors':form.errors })
