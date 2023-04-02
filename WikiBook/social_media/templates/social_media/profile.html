@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if information_updated %}
+        <div style="background-color:green;">
+            Information updated.
+        </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Profile</legend>
+            <label for="id_username">Username:</label>
+            <input type="text" id="id_username" value="{{ user.username }} " readonly/>
+            {{ form.as_p }}
+        </fieldset>
+        <input type="submit" value="Send data" />
+        <a href="{% url 'social_media:index' %}">Back to Feed</a>
+        <a href="{% url 'social_media:password_change' %}">Trocar senha</a>
+    </form>
+
+    {% if field_errors %}
+        <div style="background-color:tomato;">
+            {{ field_errors }}
+        </div>
+    {% endif %}
+
+{% endblock %}

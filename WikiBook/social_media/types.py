@@ -1,4 +1,4 @@
-gender = [('M','Male'), ('F', 'Female'), ('N', 'NOT INFORMED')]
+gender = [('M','Masculino'), ('F', 'Feminino'), ('N', 'Não informado')]
 states = [
         ('AC','Acre'),
         ('AL','Alagoas'),
@@ -27,4 +27,4 @@ states = [
         ('SP','São Paulo'),
         ('SE','Sergipe'),
         ('TO','Tocantins'),
-        ('??', 'Unknown')]
+        ('NI', 'Não Informado')]

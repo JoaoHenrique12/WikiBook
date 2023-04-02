@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    Hello <strong>{{ user.username }}</strong>, this is your feed.
+    Olá <strong>{{ user.username }}</strong>, este é o seu feed de notícias.
     
+    <a href="{% url 'social_media:profile' user.id %}">Seu perfil</a>
+    <br>
     <a href="accounts/logout">Logout</a>
 {% endblock %}

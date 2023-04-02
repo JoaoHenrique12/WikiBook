@@ -4,11 +4,11 @@
     <form method="post">
         {% csrf_token %}
         <fieldset>
-            <legend>Create User</legend>
+            <legend>Novo usuário</legend>
             {{ form.as_p }}
         </fieldset>
         <input type="submit" value="Create User"/>
-        <a href="{% url 'social_media:login' %}">Login page</a>
+        <a href="{% url 'social_media:login' %}">Página de login</a>
     </form>
 
     {% if field_errors %}

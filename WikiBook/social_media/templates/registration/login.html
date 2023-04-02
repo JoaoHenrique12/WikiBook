@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <header>WikiBook, a different view from Wikipedia.</header>
+    <header>WikiBook, um ponto de vista diferente da Wikipédia.</header>
     <form method="post" id="login">
         {% csrf_token %}
         <fieldset>
@@ -14,6 +14,6 @@
             {{ form.as_p }}
         </fieldset>
         <input type="submit" value="Login" />
-        <a href="{% url 'social_media:register' %}">Create account</a>
+        <a href="{% url 'social_media:register' %}">Criar conta</a>
     </form>
 {% endblock %}
