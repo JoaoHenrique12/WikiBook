@@ -68,3 +68,12 @@
 .typed-text > span.cursor {
     animation: blink .7s linear infinite;
 }
+
+ ul {
+    list-style-position: inside;
+    list-style-type:none;
+}
+
+ul > li::before {
+    content: '\1F58B';
+}

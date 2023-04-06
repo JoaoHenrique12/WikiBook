@@ -22,7 +22,6 @@ def register(request):
         login(request,user)
         return redirect(reverse("social_media:index"))
     else:
-        print(form.errors)
         return render(request, 'registration/register.html', { 'form': RegistrationForm(), 'field_errors': form.errors })
 
 @login_required

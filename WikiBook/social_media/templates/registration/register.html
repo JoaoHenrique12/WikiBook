@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'social_media/user_forms.css' %}">
+{% endblock %}
 
 {% block content %}
-    <form method="post" id="new_user">
+    <form method="post" id="register">
         {% csrf_token %}
         <fieldset>
             <legend>Novo usuário</legend>
             {{ form.as_p }}
         </fieldset>
-        <input type="submit" value="Criar usuário"/>
-        <a href="{% url 'social_media:login' %}">Página de login</a>
+        <div>
+            <input class= "leaf" type="submit" value="Criar usuário"/>
+            <a class= "leaf"  href="{% url 'social_media:login' %}">Página de login</a>
+        </div>
     </form>
 
     {% if field_errors %}
-        <div id="create_user_errors" style="background-color: tomato;">
+        <div id="create_user_errors" >
             {{ field_errors }}
         </div>
     {% endif %}
