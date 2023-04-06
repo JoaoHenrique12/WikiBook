@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post">
+    <form method="post" id="new_user">
         {% csrf_token %}
         <fieldset>
             <legend>Novo usuário</legend>
             {{ form.as_p }}
         </fieldset>
-        <input type="submit" value="Create User"/>
+        <input type="submit" value="Criar usuário"/>
         <a href="{% url 'social_media:login' %}">Página de login</a>
     </form>
 

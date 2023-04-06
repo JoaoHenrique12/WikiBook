@@ -6,14 +6,18 @@
 {% endblock %}
 
 {% block content %}
-    <header>WikiBook, um ponto de vista diferente da Wikipédia.</header>
     <form method="post" id="login">
         {% csrf_token %}
         <fieldset>
             <legend>Login</legend>
             {{ form.as_p }}
         </fieldset>
-        <input type="submit" value="Login" />
-        <a href="{% url 'social_media:register' %}">Criar conta</a>
+
+        <div>
+            <input type="submit" value="Login" class="leaf"/>
+
+            <a href="{% url 'social_media:register' %}" class="leaf">Criar conta</a>
+        </div>
     </form>
+    <footer class="slogan typed-text">WikiBook, um ponto de vista diferente da Wikipédia.</footer>
 {% endblock %}

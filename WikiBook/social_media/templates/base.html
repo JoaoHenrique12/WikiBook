@@ -8,11 +8,11 @@
     <title>WikiBook</title>
     {% load static %}
     <link rel="shortcut icon" href="{% static 'social_media/images/favicon.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'social_media/global.css'%}">
+    <script src="{% static 'social_media/main.js'%}"></script>
     {% block head %}
     {% endblock %}
 </head>
-<body>
+<body onload="trigger();">
     {% block content %}
         Default block
     {% endblock %}

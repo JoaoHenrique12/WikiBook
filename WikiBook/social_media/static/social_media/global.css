@@ -5,15 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
 
+@import url('animations.css');
+
 * {
     margin: 0px;
     padding: 0px;
     outline: transparent;
-}
-
-html, body {
-    width: 100vw;
-    height: 100vh;
 }
 
 :root {
@@ -23,9 +20,51 @@ html, body {
     --font-cursive: 'Henny Penny', cursive;
     --font-monospace: 'Source Code Pro', monospace;
 
-    --cor1: #d98236;
-    --cor2: #bf7245;
-    --cor3: #8c5e54;
-    --cor4: #734f22;
-    --cor5: #402719;
+    --cor1: #0cf25d;
+    --cor2: #038c3e;
+    --cor3: #02735e;
+    --cor4: #025951;
+    --cor5: #034159;
+}
+
+::selection {
+    background-color: var(--cor1);
+}
+
+.leaf {
+    background-color: var(--cor5);
+    color: white;
+
+    font-family: var(--font-serif);
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    padding: 5px;
+    border: 0;
+    outline: 0;
+
+    border-radius: 0px 7px 0px 7px;
+    margin: 10px;
+}
+
+.leaf:hover {
+    transition: .35s;
+    background-color: var(--cor3);
+    cursor: pointer;
+
+    box-shadow: 0px 0px 4px 4px black;
+}
+
+.slogan {
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-cursive);
+}
+
+.typed-text {
+    display: hidden;
+}
+
+.typed-text > span.cursor {
+    animation: blink .7s linear infinite;
 }
