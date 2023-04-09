@@ -115,16 +115,6 @@ form#register > fieldset > ul {
     order: 1;
 }
 
-div#create_user_errors {
-    font-size: 1.1rem;
-    background-color: var(--cor5);
-    color: white;
-    margin-bottom: 30px;
-
-    border-radius: 0px 5px 0px 5px;
-    box-shadow: 3px 3px 4px 4px  black;
-}
-
 /* Profile Page*/
 
 form#profile {

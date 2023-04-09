@@ -18,5 +18,5 @@ class ProfileForm(forms.ModelForm):
         fields = ['like_read', 'birth', 'gender', 'state', 'image_link', 'description']
 
         widgets = {
-            'birth': forms.DateInput(attrs={'type':'date'}),
+            'birth': forms.DateInput(attrs={ 'type':'date'}, format='%Y-%m-%d'),
         }

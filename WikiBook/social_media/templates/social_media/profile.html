@@ -7,7 +7,7 @@
 
 {% block content %}
     {% if information_updated %}
-        <div style="background-color:green;">
+        <div class="sucess-form">
             Information updated.
         </div>
     {% endif %}
@@ -25,7 +25,7 @@
     </form>
 
     {% if field_errors %}
-        <div style="background-color:tomato;">
+        <div class="error-form">
             {{ field_errors }}
         </div>
     {% endif %}

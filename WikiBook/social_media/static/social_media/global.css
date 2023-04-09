@@ -69,6 +69,31 @@
     animation: blink .7s linear infinite;
 }
 
+
+.sucess-form {
+    padding: 10px;
+    background-color: var(--cor5);
+    color: whitesmoke;
+    min-width: 300px;
+
+    font-size: 2rem;
+    font-family: var(--font-cursive);
+    text-align: center;
+
+    border-radius: 0px 5px 0px 5px;
+    box-shadow: 3px 3px 4px 4px  black;
+}
+
+.error-form {
+    font-size: 1.1rem;
+    background-color: var(--cor5);
+    color: white;
+    margin-bottom: 30px;
+
+    border-radius: 0px 5px 0px 5px;
+    box-shadow: 3px 3px 4px 4px  black;
+}
+
  ul {
     list-style-position: inside;
     list-style-type:none;
