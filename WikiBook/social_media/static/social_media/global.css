@@ -94,6 +94,13 @@
     box-shadow: 3px 3px 4px 4px  black;
 }
 
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0px 30% 0px 30%;
+    align-self: center;
+}
+
  ul {
     list-style-position: inside;
     list-style-type:none;

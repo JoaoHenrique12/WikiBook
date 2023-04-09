@@ -5,6 +5,7 @@ from django.urls import reverse
 
 from .forms import *
 from .models import *
+from .utils_views import *
 
 @login_required()
 def index(request):
@@ -26,17 +27,19 @@ def register(request):
 
 @login_required
 def profile(request, user_id):
-
+    image_link = get_image_or_default()
     if request.method == "GET":
         profile = get_object_or_404(Profile, pk=user_id)
         form = ProfileForm(instance=profile)
-        return render(request, 'social_media/profile.html', { 'form': form })
+        image_link = get_image_or_default(profile.image_link, profile.gender)
+        return render(request, 'social_media/profile.html', { 'form': form, 'image_link': image_link})
     else :
         form = ProfileForm(request.POST)
         if form.is_valid():
-            social_media_profile = form.save(commit=False)
-            social_media_profile.user_id = request.user.id
-            social_media_profile.save()
-            return render(request, 'social_media/profile.html', { 'form': form , 'information_updated': True })
+            profile = form.save(commit=False)
+            profile.user_id = request.user.id
+            profile.save()
+            image_link = get_image_or_default(profile.image_link, profile.gender)
+            return render(request, 'social_media/profile.html', { 'form': form ,'image_link': image_link, 'information_updated': True })
 
-        return render(request, 'social_media/profile.html', { 'form': form , 'field_errors': form.errors })
+        return render(request, 'social_media/profile.html', { 'form': form ,'image_link': image_link ,'field_errors': form.errors })
