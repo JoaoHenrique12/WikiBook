@@ -14,6 +14,7 @@ body {
 
     height: 100vh;
 }
+
 /*  Login Page */
 form#login {
     width: 550px;
@@ -46,15 +47,45 @@ fieldset label {
     font-family: var(--font-serif);
 }
 
+/* Leaf style for form elements. */
+fieldset input, fieldset textarea, fieldset select {
+    border-radius: 0px 5px 0px 5px ;
+}
+
 fieldset input {
     height: 20px;
     border-color: var(--cor5);
     border-width: 2px;
     font-size: 1rem;
+
 }
 
-fieldset input:focus {
+fieldset input:focus, fieldset textarea:focus {
     box-shadow: 0px 0px 2px 2px var(--cor2);
+}
+
+fieldset select {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    background-color: var(--cor3);
+    color: white;
+
+    text-align: left;
+
+    padding: 2px;
+}
+
+input[type=checkbox]:focus {
+    box-shadow: none;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+input[type=checkbox]:checked {
+    accent-color: var(--cor2);
 }
 
 /* Register Page */
@@ -92,4 +123,33 @@ div#create_user_errors {
 
     border-radius: 0px 5px 0px 5px;
     box-shadow: 3px 3px 4px 4px  black;
+}
+
+/* Profile Page*/
+
+form#profile {
+    max-width: 1190px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 100px;
+}
+
+form#profile > fieldset {
+    flex-direction: column;
+    border: solid;
+}
+form#profile > fieldset  textarea {
+    resize: none;
+    width: calc(100% - 20px);
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    padding: 10px;
+
+    font-size: 1rem;
+    font-family: var(--font-monospace);
 }

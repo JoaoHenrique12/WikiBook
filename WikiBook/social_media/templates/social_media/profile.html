@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'social_media/user_forms.css' %}">
+{% endblock %}
+
 {% block content %}
     {% if information_updated %}
         <div style="background-color:green;">
             Information updated.
         </div>
     {% endif %}
-    <form method="post">
+    <form method="post" id="profile">
         {% csrf_token %}
         <fieldset>
-            <legend>Profile</legend>
-            <label for="id_username">Username:</label>
-            <input type="text" id="id_username" value="{{ user.username }} " readonly/>
+            <legend>Sobre: {{ user.username }}</legend>
             {{ form.as_p }}
         </fieldset>
-        <input type="submit" value="Send data" />
-        <a href="{% url 'social_media:index' %}">Back to Feed</a>
-        <a href="{% url 'social_media:password_change' %}">Trocar senha</a>
+        <div>
+            <input class="leaf-btn" type="submit" value="Send data" />
+            <a class="leaf-btn" href="{% url 'social_media:index' %}">Back to Feed</a>
+            <a class="leaf-btn" href="{% url 'social_media:password_change' %}">Trocar senha</a>
+        </div>
     </form>
 
     {% if field_errors %}

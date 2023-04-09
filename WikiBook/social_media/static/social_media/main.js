@@ -1,8 +1,8 @@
 function trigger () {
-    typing_effect();
+    activate_typing_effect();
 }
 
-function typing_effect() {
+function activate_typing_effect() {
     elements = document.querySelectorAll('.typed-text');
     for( el of elements ){
         txt = el.innerText;

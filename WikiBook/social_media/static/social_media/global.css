@@ -31,7 +31,7 @@
     background-color: var(--cor1);
 }
 
-.leaf {
+.leaf-btn {
     background-color: var(--cor5);
     color: white;
 
@@ -47,7 +47,7 @@
     margin: 10px;
 }
 
-.leaf:hover {
+.leaf-btn:hover {
     transition: .35s;
     background-color: var(--cor3);
     cursor: pointer;
