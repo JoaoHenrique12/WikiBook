@@ -17,7 +17,7 @@ body {
 
 /*  Login Page */
 form#login {
-    width: 550px;
+    width: 750px;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -26,13 +26,19 @@ form#login {
 }
 
 fieldset {
-    border: none;
+    border: solid;
+    border-width: 2px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 
     width: 100%;
 
     margin-bottom: 10px;
+}
+
+fieldset ul {
+    order: 1;
 }
 
 fieldset > legend {
