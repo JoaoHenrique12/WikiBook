@@ -149,3 +149,12 @@ form#profile > fieldset  textarea {
     font-size: 1rem;
     font-family: var(--font-monospace);
 }
+
+/* Form input */
+
+form#password_change label, form#password_change ul {
+    font-size: 1.5rem;
+}
+form#password_change label {
+    font-weight: bold;
+}

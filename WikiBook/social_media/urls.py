@@ -1,4 +1,5 @@
-from django.urls import re_path, include
+from django.urls import re_path, include, reverse_lazy
+from django.contrib.auth.views import PasswordChangeView
 
 from .views import *
 
@@ -9,4 +10,6 @@ urlpatterns = [
 
     re_path(r'^accounts/',include("django.contrib.auth.urls")),
     re_path(r'^accounts/register', register, name="register"), # type: ignore
+    re_path(r'^accounts/password_change/done', password_change_done, name="password_change_done"), # type: ignore
+    re_path(r'^accounts/password_change', PasswordChangeView.as_view(success_url=reverse_lazy('social_media:password_change_done')), name="password_change"), # type: ignore
 ]

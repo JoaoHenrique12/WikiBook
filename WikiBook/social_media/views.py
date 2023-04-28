@@ -7,6 +7,10 @@ from .forms import *
 from .models import *
 from .utils_views import *
 
+@login_required
+def password_change_done(request):
+    return render(request, 'registration/password_change_done.html', { 'information_updated': True })
+
 @login_required()
 def index(request):
     return render(request, 'social_media/index.html')
