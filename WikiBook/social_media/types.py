@@ -28,3 +28,10 @@ states = [
         ('SE','Sergipe'),
         ('TO','Tocantins'),
         ('NI', 'Não Informado')]
+
+profile_connectivity = [
+        ('U', 'Undefined'),
+        ('B', 'Block'),
+        ('F', 'Friend Request'),
+        ('C', 'Cancel Friend Request '),
+        ('R', 'Refuse Friend Request')]
