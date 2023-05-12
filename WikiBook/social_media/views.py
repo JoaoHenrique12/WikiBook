@@ -1,9 +1,11 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, render
 from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
 
 from .forms import *
 from .models import *
@@ -32,21 +34,31 @@ class RegisterView(CreateView):
     def form_invalid(self, form):
         return render(self.request, self.template_name, { 'form': UserForm(), 'field_errors': form.errors })
 
-@login_required
-def profile(request, user_id):
-    image_link = get_image_or_default()
-    if request.method == "GET":
-        profile = get_object_or_404(Profile, pk=user_id)
-        form = ProfileForm(instance=profile)
-        image_link = get_image_or_default(profile.image_link, profile.gender)
-        return render(request, 'social_media/profile.html', { 'form': form, 'image_link': image_link})
-    else :
-        form = ProfileForm(request.POST)
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user_id = request.user.id
-            profile.save()
-            image_link = get_image_or_default(profile.image_link, profile.gender)
-            return render(request, 'social_media/profile.html', { 'form': form ,'image_link': image_link, 'information_updated': True })
 
-        return render(request, 'social_media/profile.html', { 'form': form ,'image_link': image_link ,'field_errors': form.errors })
+# LoginRequiredMixin, must be the first class in inheritance.
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    model = Profile
+    form_class = ProfileForm
+    template_name = 'social_media/profile.html'
+
+    def get_success_url(self):
+        return reverse_lazy('social_media:profile', kwargs={'user_id': self.object.user_id})
+
+    def get_object(self):
+        user_id = self.kwargs.get('user_id')
+        return get_object_or_404(Profile, pk=user_id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        image_link = get_image_or_default(self.object.image_link, self.object.gender)
+        context['image_link'] = image_link
+        return context
+
+    def form_valid(self, form):
+        profile = form.save(commit=False)
+        profile.user_id = self.request.user.id # type:ignore
+        profile.save()
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return self.render_to_response(self.get_context_data(form=form, field_errors=form.errors))
