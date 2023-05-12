@@ -10,7 +10,7 @@ image_help_text = 'Se você tem uma conta no github, vá até sua página de per
 class Profile(models.Model):
     user = models.OneToOneField(User, models.RESTRICT, primary_key=True)
 
-    public_profile = models.BooleanField(verbose_name="Perfil é público ?", default=True)
+    public_profile = models.BooleanField(verbose_name="Perfil público ?", default=True)
 
     like_read = models.BooleanField(verbose_name='Gosta de ler ?', default=False)
     birth = models.DateField(verbose_name='Data de nascimento', null=True, blank=False)

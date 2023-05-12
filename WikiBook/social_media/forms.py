@@ -15,7 +15,7 @@ class RegistrationForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['like_read', 'birth', 'gender', 'state', 'image_link', 'description']
+        fields = ['public_profile','like_read', 'birth', 'gender', 'state', 'image_link', 'description']
 
         widgets = {
             'birth': forms.DateInput(attrs={ 'type':'date'}, format='%Y-%m-%d'),
