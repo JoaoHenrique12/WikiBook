@@ -26,7 +26,6 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        Profile.objects.create(user=self.object)
         login(self.request, self.object)
         return response
     
