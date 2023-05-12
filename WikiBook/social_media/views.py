@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+
+from django.views.generic.edit import CreateView
 
 from .forms import *
 from .models import *
@@ -15,19 +17,21 @@ def password_change_done(request):
 def index(request):
     return render(request, 'social_media/index.html')
 
-def register(request):
-    if request.method == "GET":
-        return render(request, 'registration/register.html', {'form':RegistrationForm()})
+class RegisterView(CreateView):
+    form_class = UserForm
+    model = User
 
-    form = RegistrationForm(request.POST)
-    if form.is_valid():
-        user = form.save()
-        Profile.objects.create(user_id=user.id).save()
-        form.save()
-        login(request,user)
-        return redirect(reverse("social_media:index"))
-    else:
-        return render(request, 'registration/register.html', { 'form': RegistrationForm(), 'field_errors': form.errors })
+    template_name = 'registration/register.html'
+    success_url = reverse_lazy("social_media:index")
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        Profile.objects.create(user=self.object)
+        login(self.request, self.object)
+        return response
+    
+    def form_invalid(self, form):
+        return render(self.request, self.template_name, { 'form': UserForm(), 'field_errors': form.errors })
 
 @login_required
 def profile(request, user_id):
