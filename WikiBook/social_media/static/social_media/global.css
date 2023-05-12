@@ -62,13 +62,19 @@
 }
 
 .typed-text {
-    display: hidden;
+    display: none;
 }
 
-.typed-text > span.cursor {
+.typed-text::after {
+    content: '|';
+    display: 'inline';
     animation: blink .7s linear infinite;
 }
 
+.final-typed-text::after {
+    content: '';
+    animation: none;
+}
 
 .sucess-form {
     padding: 10px;
