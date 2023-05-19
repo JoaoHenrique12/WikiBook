@@ -46,6 +46,8 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self):
         user_id = self.kwargs.get('user_id')
+        if user_id != str(self.request.user.id): # type:ignore
+            user_id = self.request.user.id # type:ignore
         return get_object_or_404(Profile, pk=user_id)
 
     def get_context_data(self, **kwargs):
