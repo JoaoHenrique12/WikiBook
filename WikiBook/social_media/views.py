@@ -60,7 +60,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
         profile = form.save(commit=False)
         profile.user_id = self.request.user.id # type:ignore
         profile.save()
-        return super().form_valid(form)
+        return self.render_to_response(self.get_context_data(form=form, information_updated=True))
 
     def form_invalid(self, form):
         return self.render_to_response(self.get_context_data(form=form, field_errors=form.errors))
