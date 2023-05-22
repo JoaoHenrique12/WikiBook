@@ -6,4 +6,4 @@ class SocialMediaConfig(AppConfig):
     name = 'social_media'
 
     def ready(self) -> None:
-        import social_media.signals # type:ignore
+        import social_media.signals
