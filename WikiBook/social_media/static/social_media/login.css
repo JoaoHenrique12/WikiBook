@@ -1,0 +1,12 @@
+@import url("global.css");
+
+body {
+  background-color: var(--clr-bg4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100vh;
+}

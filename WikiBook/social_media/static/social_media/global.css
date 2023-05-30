@@ -1,121 +1,109 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
 
-@import url('animations.css');
+@import url("animations.css");
 
 * {
-    margin: 0px;
-    padding: 0px;
-    outline: transparent;
+  margin: 0px;
+  padding: 0px;
+  outline: transparent;
 }
 
 :root {
-    --font-serif: 'Crimson Text', serif;
-    --font-sanserif: 'Raleway', sans-serif;
+  --font-serif: "Crimson Text", serif;
+  --font-sanserif: "Raleway", sans-serif;
 
-    --font-cursive: 'Henny Penny', cursive;
-    --font-monospace: 'Source Code Pro', monospace;
+  --font-cursive: "Henny Penny", cursive;
+  --font-monospace: "Source Code Pro", monospace;
 
-    --cor1: #0cf25d;
-    --cor2: #038c3e;
-    --cor3: #02735e;
-    --cor4: #025951;
-    --cor5: #034159;
+  --clr-red: #cc241d;
+  --clr-green: #98971a;
+  --clr-yellow: #d79921;
+  --clr-blue: #458588;
+  --clr-purple: #b16286;
+  --clr-aqua: #689d6a;
+  --clr-orange: #d65d0e;
+
+  --clr-bg0: #282828;
+  --clr-bg1: #3c3836;
+  --clr-bg2: #504945;
+  --clr-bg3: #665c54;
+  --clr-bg4: #7c6f64;
+
+  --clr-fg0: #fbf1c7;
+  --clr-fg1: #ebdbb2;
+  --clr-fg2: #d4c4a1;
+  --clr-fg3: #bdae93;
+  --clr-fg4: #a89984;
 }
 
 ::selection {
-    background-color: var(--cor1);
-}
-
-.leaf-btn {
-    background-color: var(--cor5);
-    color: white;
-
-    font-family: var(--font-serif);
-    text-decoration: none;
-    font-size: 1.5rem;
-
-    padding: 5px;
-    border: 0;
-    outline: 0;
-
-    border-radius: 0px 7px 0px 7px;
-    margin: 10px;
-}
-
-.leaf-btn:hover {
-    transition: .35s;
-    background-color: var(--cor3);
-    cursor: pointer;
-
-    box-shadow: 0px 0px 4px 4px black;
+  background-color: var(--clr-aqua);
 }
 
 .slogan {
-    text-align: center;
-    font-size: 2rem;
-    font-family: var(--font-cursive);
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-cursive);
 }
 
 .typed-text {
-    display: none;
+  display: none;
 }
 
 .typed-text::after {
-    content: '|';
-    display: 'inline';
-    animation: blink .7s linear infinite;
+  content: "|";
+  display: "inline";
+  animation: blink 0.7s linear infinite;
 }
 
 .final-typed-text::after {
-    content: '';
-    animation: none;
+  content: "";
+  animation: none;
 }
 
 .sucess-form {
-    padding: 10px;
-    background-color: var(--cor5);
-    color: whitesmoke;
-    min-width: 300px;
+  padding: 10px;
+  background-color: var(--clr-green);
+  color: var(--clr-fg0);
+  min-width: 300px;
 
-    font-size: 2rem;
-    font-family: var(--font-cursive);
-    text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-cursive);
+  text-align: center;
 
-    border-radius: 0px 5px 0px 5px;
-    box-shadow: 3px 3px 4px 4px  black;
+  box-shadow: 3px 3px 4px 4px black;
 }
 
 .error-form {
-    font-size: 1.1rem;
-    background-color: var(--cor5);
-    color: white;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  background-color: var(--clr-red);
+  color: var(--clr-fg0);
+  margin-bottom: 30px;
 
-    border-radius: 0px 5px 0px 5px;
-    box-shadow: 3px 3px 4px 4px  black;
+  box-shadow: 3px 3px 4px 4px black;
 }
 
 .errorlist {
-    align-self: end;
+  align-self: end;
 }
 
 .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 0px 30% 0px 30%;
-    align-self: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 15% 15% 15% 15%;
+  align-self: center;
 }
 
- ul {
-    list-style-position: inside;
-    list-style-type:none;
+ul {
+  list-style-position: inside;
+  list-style-type: none;
 }
 
 ul > li::before {
-    content: '\1F58B';
+  content: "\1F58B";
 }
