@@ -1,8 +1,8 @@
-from django.urls import re_path, include, reverse_lazy
-from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import LoginView, PasswordChangeView
+from django.urls import include, re_path, reverse_lazy
 
-from .views import ProfileUpdateView,\
-    password_change_done, index, RegisterView
+from .forms import UserLoginForm
+from .views import ProfileUpdateView, RegisterView, index, password_change_done
 
 app_name = 'social_media'
 urlpatterns = [
@@ -10,6 +10,11 @@ urlpatterns = [
 
     re_path(r'profile/(?P<user_id>\d+)/',
             ProfileUpdateView.as_view(), name="profile"),
+
+    re_path(r'^accounts/login', LoginView.as_view(
+        authentication_form=UserLoginForm
+    ),
+        name="login"),
 
     re_path(r'^accounts/', include("django.contrib.auth.urls")),
 

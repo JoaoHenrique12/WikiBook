@@ -1,14 +1,12 @@
-from django.shortcuts import get_object_or_404, render
 from django.contrib.auth import login
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView
 
-from django.views.generic.edit import CreateView
-from django.views.generic.edit import UpdateView
-
-from .forms import UserForm, ProfileForm
-from .models import User, Profile
+from .forms import ProfileForm, UserForm
+from .models import Profile, User
 from .utils_views import get_image_or_default
 
 
