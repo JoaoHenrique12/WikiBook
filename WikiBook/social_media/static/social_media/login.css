@@ -1,7 +1,7 @@
 @import url("global.css");
 
 body {
-  background-color: var(--clr-bg4);
+  background-color: var(--clr-bg0);
 
   display: flex;
   flex-direction: column;
@@ -9,4 +9,34 @@ body {
   justify-content: space-evenly;
 
   height: 100vh;
+}
+
+.form-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+form#login {
+  color: var(--clr-fg0);
+}
+
+form#login fieldset {
+  border: 0;
+}
+
+form#login legend {
+  font-size: 3rem;
+  font-family: var(--font-cursive);
+  text-align: center;
+}
+
+form#login input {
+  text-align: center;
+  font-family: var(--font-serif);
+  margin: 10px;
+  font-size: 1.2rem;
+}
+form#login input:focus {
+  transition: 0.35s;
+  box-shadow: 0px 0px 2px 2px var(--clr-yellow);
 }
