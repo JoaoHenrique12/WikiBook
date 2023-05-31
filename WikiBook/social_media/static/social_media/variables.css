@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+
+:root {
+  --font-serif: "Crimson Text", serif;
+  --font-sanserif: "Raleway", sans-serif;
+
+  --font-cursive: "Henny Penny", cursive;
+  --font-monospace: "Source Code Pro", monospace;
+
+  --clr-red: #cc241d;
+  --clr-green: #98971a;
+  --clr-yellow: #d79921;
+  --clr-blue: #458588;
+  --clr-purple: #b16286;
+  --clr-aqua: #689d6a;
+  --clr-orange: #d65d0e;
+
+  --clr-bg0: #282828;
+  --clr-bg1: #3c3836;
+  --clr-bg2: #504945;
+  --clr-bg3: #665c54;
+  --clr-bg4: #7c6f64;
+
+  --clr-fg0: #fbf1c7;
+  --clr-fg1: #ebdbb2;
+  --clr-fg2: #d4c4a1;
+  --clr-fg3: #bdae93;
+  --clr-fg4: #a89984;
+}

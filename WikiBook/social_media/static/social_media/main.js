@@ -1,19 +1,19 @@
-function trigger () {
-    activate_typing_effect();
+function trigger() {
+  activate_typing_effect();
 }
 
 async function activate_typing_effect() {
-    elements = document.querySelectorAll('.typed-text');
-    for( el of elements ){
-        txt = el.innerText;
-        el.innerText = '';
-        await typing(el, txt);
-    }
+  elements = document.querySelectorAll(".typed-text");
+  for (el of elements) {
+    txt = el.innerText;
+    el.innerText = "";
+    await typing(el, txt);
+  }
 }
 
 function typing(el, txt) {
-  return new Promise(resolve => {
-    el.style.display = 'block';
+  return new Promise((resolve) => {
+    el.style.display = "block";
     let i = 0;
     const speed = 70;
 
@@ -23,7 +23,7 @@ function typing(el, txt) {
         i++;
         setTimeout(typer, speed);
       } else {
-        el.classList.add('final-typed-text');
+        el.classList.add("final-typed-text");
         resolve();
       }
     }
@@ -32,3 +32,10 @@ function typing(el, txt) {
   });
 }
 
+function remove_field_errors_dialog() {
+  dialog_error = document.querySelector(".error-form");
+  back_wall = document.querySelector(".back-wall");
+
+  dialog_error.remove();
+  back_wall.remove();
+}

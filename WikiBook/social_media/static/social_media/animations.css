@@ -1,3 +1,61 @@
-@keyframes blink{
-  50%{opacity: .5;}
+@import "variables.css";
+
+/* Animation for Typed text */
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.typed-text {
+  display: none;
+}
+
+.typed-text::after {
+  content: "|";
+  display: "inline";
+  animation: blink 0.7s linear infinite;
+}
+
+.final-typed-text::after {
+  content: "";
+  animation: none;
+}
+
+/* Animation for Forms getting into page */
+@keyframes top-down {
+  0% {
+    top: 0%;
+  }
+}
+
+.error-form {
+  animation: top-down 2.5s;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 100;
+
+  font-size: 1.1rem;
+  background-color: var(--clr-red);
+  color: var(--clr-fg0);
+  margin-bottom: 30px;
+
+  padding: 10px;
+}
+
+.back-wall {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 99;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
 }

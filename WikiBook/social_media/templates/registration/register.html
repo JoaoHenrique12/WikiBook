@@ -15,5 +15,18 @@
             <a class="large-btn"  href="{% url 'social_media:login' %}">Página de login</a>
         </div>
     </form>
-    {% if field_errors %}<div class="error-form">{{ field_errors }}</div>{% endif %}
+    {% if field_errors %}
+        <div class="back-wall"></div>
+        <div class="error-form">
+            <ul>
+                {% for element, errors in field_errors.items %}
+                    {% for error in  errors %}<li>{{ error }}</li>{% endfor %}
+                {% endfor %}
+            </ul>
+            <input onclick="remove_field_errors_dialog();"
+                   class="error-btn"
+                   type="button"
+                   value="Ok">
+        </div>
+    {% endif %}
 {% endblock %}
