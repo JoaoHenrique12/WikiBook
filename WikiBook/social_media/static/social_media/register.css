@@ -11,27 +11,41 @@ body {
   height: 100vh;
 }
 
-form#login {
+form#register {
   color: var(--clr-fg0);
+  max-width: 480px;
 }
 
-form#login fieldset {
+form#register fieldset {
   border: 0;
 }
 
-form#login legend {
+form#register legend {
   font-size: 3rem;
   font-family: var(--font-cursive);
-  text-align: center;
+  text-align: left;
 }
 
-form#login input {
-  text-align: center;
+form#register input {
+  text-align: left;
   font-family: var(--font-serif);
   margin: 10px;
   font-size: 1.2rem;
 }
-form#login input:focus {
+form#register input:focus {
   transition: 0.35s;
   box-shadow: 0px 0px 2px 2px var(--clr-yellow);
+}
+
+form#register span {
+  display: block;
+}
+
+form#register fieldset {
+  display: flex;
+  flex-direction: column;
+}
+fieldset ul {
+  margin-top: 20px;
+  order: 1;
 }

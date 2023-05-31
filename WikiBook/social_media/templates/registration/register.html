@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-    <link rel="stylesheet" href="{% static 'social_media/user_forms.css' %}">
+    <link rel="stylesheet" href="{% static 'social_media/register.css' %}">
 {% endblock %}
-
 {% block content %}
     <form method="post" id="register">
         {% csrf_token %}
@@ -11,15 +10,10 @@
             <legend>Novo usuário</legend>
             {{ form.as_p }}
         </fieldset>
-        <div>
-            <input class= "leaf-btn" type="submit" value="Criar usuário"/>
-            <a class= "leaf-btn"  href="{% url 'social_media:login' %}">Página de login</a>
+        <div class="form-buttons-container">
+            <input class="large-btn" type="submit" value="Criar usuário" />
+            <a class="large-btn"  href="{% url 'social_media:login' %}">Página de login</a>
         </div>
     </form>
-
-    {% if field_errors %}
-        <div  class="error-form" >
-            {{ field_errors }}
-        </div>
-    {% endif %}
+    {% if field_errors %}<div class="error-form">{{ field_errors }}</div>{% endif %}
 {% endblock %}
