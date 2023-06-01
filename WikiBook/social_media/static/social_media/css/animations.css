@@ -47,6 +47,30 @@
   padding: 10px;
 }
 
+.sucess-form {
+  animation: top-down 2.5s;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 100;
+
+  padding: 10px;
+  background-color: var(--clr-green);
+  color: var(--clr-fg0);
+  min-width: 300px;
+
+  font-size: 2rem;
+  font-family: var(--font-cursive);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .back-wall {
   position: absolute;
   top: 0;

@@ -13,6 +13,7 @@ body {
 
 form#login {
   color: var(--clr-fg0);
+  max-width: 250px;
 }
 
 form#login fieldset {

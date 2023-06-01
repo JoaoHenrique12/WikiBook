@@ -39,3 +39,11 @@ function remove_field_errors_dialog() {
   dialog_error.remove();
   back_wall.remove();
 }
+
+function remove_field_sucess_dialog() {
+  dialog_sucess = document.querySelector(".sucess-form");
+  back_wall = document.querySelector(".back-wall");
+
+  dialog_sucess.remove();
+  back_wall.remove();
+}

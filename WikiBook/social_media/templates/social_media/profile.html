@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-    <link rel="stylesheet" href="{% static 'social_media/user_forms.css' %}">
+    <link rel="stylesheet" href="{% static 'social_media/css/profile.css' %}">
 {% endblock %}
 {% block content %}
-    {% if information_updated %}<div class="sucess-form">Information updated.</div>{% endif %}
     <form method="post" id="profile">
         {% csrf_token %}
         <fieldset>
             <legend>Sobre: {{ user.username }}</legend>
-            <img src="{{ image_link }}" class="profile-img" alt="Imagem do perfil.">
+            <img width="225px"
+                 height="225px"
+                 src="{{ image_link }}"
+                 class="profile-img"
+                 alt="Imagem do perfil.">
             {{ form.as_p }}
         </fieldset>
-        <div>
-            <input class="leaf-btn" type="submit" value="Send data" />
-            <a class="leaf-btn" href="{% url 'social_media:index' %}">Back to Feed</a>
-            <a class="leaf-btn" href="{% url 'social_media:password_change' %}">Trocar senha</a>
+        <div class="form-buttons-container-space-between">
+            <input class="default-btn" type="submit" value="Send data" />
+            <a class="default-btn" href="{% url 'social_media:index' %}">Back to Feed</a>
+            <a class="default-btn" href="{% url 'social_media:password_change' %}">Trocar senha</a>
         </div>
     </form>
     {% if field_errors %}<div class="error-form">{{ field_errors }}</div>{% endif %}
+    {% if information_updated %}
+        <div class="back-wall"></div>
+        <div class="sucess-form" onclick="remove_field_sucess_dialog();">
+            <p>Information updated.</p>
+            <input class="default-btn" type="button" name="" value="Ok">
+        </div>
+    {% endif %}
 {% endblock %}

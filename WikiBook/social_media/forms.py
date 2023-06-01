@@ -31,7 +31,7 @@ class UserLoginForm(AuthenticationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['public_profile', 'like_read', 'birth', 'gender', 'state',
+        fields = ['public_profile', 'like_read', 'gender', 'state', 'birth',
                   'image_link', 'description']
 
         widgets = {
