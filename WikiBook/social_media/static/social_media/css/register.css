@@ -14,24 +14,33 @@ body {
 form#register {
   color: var(--clr-fg0);
   max-width: 480px;
-}
+  border: 1px solid var(--clr-fg0);
 
-form#register fieldset {
-  border: 0;
+  padding: 10px;
+}
+form#register p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 form#register legend {
   font-size: 3rem;
   font-family: var(--font-cursive);
-  text-align: left;
+  text-align: center;
 }
 
-form#register input {
-  text-align: left;
+form#register input[type]:not([type="submit"]) {
+  text-align: center;
   font-family: var(--font-serif);
   margin: 10px;
   font-size: 1.2rem;
+  color: var(--clr-fg0);
+
+  background-color: var(--clr-bg4);
 }
+
 form#register input:focus {
   transition: 0.35s;
   box-shadow: 0px 0px 2px 2px var(--clr-yellow);
@@ -39,11 +48,14 @@ form#register input:focus {
 
 form#register span {
   display: block;
+  width: 100%;
+  background-color: var(--clr-bg2);
 }
 
 form#register fieldset {
   display: flex;
   flex-direction: column;
+  border: 0;
 }
 fieldset ul {
   margin-top: 20px;

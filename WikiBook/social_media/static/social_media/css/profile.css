@@ -14,7 +14,7 @@ body {
 form#profile {
   color: var(--clr-fg0);
   width: 480px;
-  border: solid var(--clr-fg0);
+  border: 1px solid var(--clr-fg0);
   padding: 10px;
 }
 
