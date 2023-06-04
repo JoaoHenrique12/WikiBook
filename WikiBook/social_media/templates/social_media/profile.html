@@ -21,12 +21,14 @@
             <a class="default-btn" href="{% url 'social_media:password_change' %}">Trocar senha</a>
         </div>
     </form>
-    {% if field_errors %}<div class="error-form">{{ field_errors }}</div>{% endif %}
+    {% if field_errors %}<div class="error-box">{{ field_errors }}</div>{% endif %}
     {% if information_updated %}
-        <div class="back-wall"></div>
-        <div class="sucess-form" onclick="remove_field_sucess_dialog();">
-            <p>Information updated.</p>
-            <input class="default-btn" type="button" name="" value="Ok">
+        <div class="context-sucess">
+            <div class="back-wall"></div>
+            <div class="sucess-box" onclick="_remove_context('.context-sucess')">
+                <p>Information updated.</p>
+                <input class="default-btn" type="button" name="" value="Ok">
+            </div>
         </div>
     {% endif %}
 {% endblock %}

@@ -1,11 +1,11 @@
-function trigger() {
+function _trigger() {
   activate_typing_effect();
 }
 
 async function activate_typing_effect() {
-  elements = document.querySelectorAll(".typed-text");
-  for (el of elements) {
-    txt = el.innerText;
+  const elements = document.querySelectorAll(".typed-text");
+  for (const el of elements) {
+    const txt = el.innerText;
     el.innerText = "";
     await typing(el, txt);
   }
@@ -32,18 +32,7 @@ function typing(el, txt) {
   });
 }
 
-function remove_field_errors_dialog() {
-  dialog_error = document.querySelector(".error-form");
-  back_wall = document.querySelector(".back-wall");
-
-  dialog_error.remove();
-  back_wall.remove();
-}
-
-function remove_field_sucess_dialog() {
-  dialog_sucess = document.querySelector(".sucess-form");
-  back_wall = document.querySelector(".back-wall");
-
-  dialog_sucess.remove();
-  back_wall.remove();
+function _remove_context(context_name) {
+  const context = document.querySelector(context_name);
+  context.remove();
 }

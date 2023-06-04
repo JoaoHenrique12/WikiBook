@@ -29,7 +29,7 @@
   }
 }
 
-.error-form {
+.error-box {
   animation: top-down 2.5s;
 
   position: absolute;
@@ -47,7 +47,7 @@
   padding: 10px;
 }
 
-.sucess-form {
+.sucess-box {
   animation: top-down 2.5s;
 
   position: absolute;
