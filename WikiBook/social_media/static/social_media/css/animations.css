@@ -22,7 +22,7 @@
   animation: none;
 }
 
-/* Animation for Forms getting into page */
+/* Animation for boxes getting into page */
 @keyframes top-down {
   0% {
     top: 0%;
