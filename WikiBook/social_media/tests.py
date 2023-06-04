@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 
 class DialogBoxFound(LiveServerTestCase):
 
-    def test_register_user(self):
+    def test_register_user_error_context(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         selenium = webdriver.Chrome(options=chrome_options)
@@ -29,4 +29,4 @@ class DialogBoxFound(LiveServerTestCase):
 
         send_button.send_keys(Keys.RETURN)
 
-        assert "error-form" in selenium.page_source
+        assert "context-error" in selenium.page_source
