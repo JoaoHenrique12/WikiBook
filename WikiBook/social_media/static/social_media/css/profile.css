@@ -99,4 +99,5 @@ form#profile span {
   background-color: var(--clr-bg4);
   border-radius: 2px;
   padding: 3px;
+  order: -1;
 }
