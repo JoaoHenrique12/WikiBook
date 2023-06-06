@@ -7,7 +7,7 @@ from django.views.generic.edit import CreateView, UpdateView
 
 from .forms import ProfileForm, UserForm
 from .models import Profile, User
-from .utils_views import get_image_or_default
+from .utils_views import get_image_or_default, get_profiles_with_images
 
 
 @login_required
@@ -19,6 +19,15 @@ def password_change_done(request):
 @login_required()
 def index(request):
     return render(request, 'social_media/index.html')
+
+
+@login_required
+def search_user(request):
+    found_profiles = Profile.objects.all()
+
+    profiles_with_images = get_profiles_with_images(found_profiles)
+    return render(request, 'social_media/search_user.html',
+                  {'found_profiles': profiles_with_images})
 
 
 class RegisterView(CreateView):

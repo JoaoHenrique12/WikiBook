@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <ul>
+        {% for profile in found_profiles %}
+            <li>
+                <img alt="Imagem de usuario"
+                     width="225"
+                     height="225"
+                     src="{{ profile.image_link }}">
+                {{ profile.user.username }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'social_media:index' %}">Back to feed</a>
+{% endblock %}
