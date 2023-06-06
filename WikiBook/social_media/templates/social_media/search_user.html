@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <form method="get">
+        {% csrf_token %}
+        <input type="text"
+               id="id_username_search"
+               name="username_search"
+               value=""
+               placeholder="username">
+        <input type="submit" value="Search">
+    </form>
     <ul>
         {% for profile in found_profiles %}
             <li>

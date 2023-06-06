@@ -23,7 +23,10 @@ def index(request):
 
 @login_required
 def search_user(request):
-    found_profiles = Profile.objects.all()
+    username_search = request.GET.get('username_search', '')
+
+    found_profiles = Profile.objects.filter(
+        user__username__icontains=username_search)
 
     profiles_with_images = get_profiles_with_images(found_profiles)
     return render(request, 'social_media/search_user.html',
