@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block header %}
+{% block head %}
     <link rel="stylesheet"
-          type="text/css"
           href="{% static 'social_media/css/search_user.css' %}">
 {% endblock %}
 {% block content %}
+    <a class="default-btn" href="{% url 'social_media:index' %}">Back to feed</a>
     <form method="get">
         {% csrf_token %}
         <input type="text"
@@ -13,18 +13,17 @@
                name="username_search"
                value=""
                placeholder="username">
-        <input type="submit" value="Search">
+        <input class="default-btn" type="submit" value="Search">
     </form>
-    <ul>
+    <div class="container-users">
         {% for profile in found_profiles %}
-            <li>
+            <a href="#" class="display-user">
                 <img alt="Imagem de usuario"
-                     width="225"
-                     height="225"
+                     width="125"
+                     height="125"
                      src="{{ profile.image_link }}">
-                {{ profile.user.username }}
-            </li>
+                <p>@{{ profile.user.username }}</p>
+            </a>
         {% endfor %}
-    </ul>
-    <a class="default-btn" href="{% url 'social_media:index' %}">Back to feed</a>
+    </div>
 {% endblock %}
