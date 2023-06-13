@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block header %}
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'social_media/css/search_user.css' %}">
+{% endblock %}
 {% block content %}
     <form method="get">
         {% csrf_token %}
@@ -21,5 +26,5 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'social_media:index' %}">Back to feed</a>
+    <a class="default-btn" href="{% url 'social_media:index' %}">Back to feed</a>
 {% endblock %}
