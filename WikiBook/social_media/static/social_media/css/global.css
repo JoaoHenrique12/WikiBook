@@ -9,6 +9,12 @@
   outline: transparent;
 }
 
+body {
+  background-color: var(--clr-bg0);
+  color: var(--clr-fg0);
+  font-family: var(--font-serif);
+}
+
 ::selection {
   background-color: var(--clr-orange);
 }
