@@ -1,0 +1,12 @@
+@import url("global.css");
+
+header#home_bar {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}

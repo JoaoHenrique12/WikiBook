@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'social_media/css/home_bar.css' %}">
+{% endblock %}
+{% block content %}
+<header id="home_bar">
+  <a class="default-btn" href="{% url 'social_media:index' %}">Home</a>
+  <a class="default-btn" href="accounts/logout">Logout</a>
+  <a class="default-btn" href="{% url 'social_media:profile' user.id %}">Seu perfil</a>
+  <img src="{{ image_link }}" alt="My profile image" width="125" height="125">
+</header>
+{% endblock %}
