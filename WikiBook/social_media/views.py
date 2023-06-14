@@ -18,7 +18,8 @@ def password_change_done(request):
 
 @login_required()
 def index(request):
-    return render(request, 'social_media/index.html')
+    context = home_bar_context(request.user.id, {})
+    return render(request, 'social_media/index.html', context)
 
 
 @login_required
@@ -29,8 +30,18 @@ def search_user(request):
         user__username__icontains=username_search)
 
     profiles_with_images = get_profiles_with_images(found_profiles)
+    context = {'found_profiles': profiles_with_images}
+    context = home_bar_context(request.user.id, context)
+
     return render(request, 'social_media/search_user.html',
-                  {'found_profiles': profiles_with_images})
+                  context)
+
+
+def home_bar_context(user_id, context_object):
+    profile = get_object_or_404(Profile, user=user_id)
+    image_link = get_image_or_default(profile.image_link, profile.gender)
+    context_object['image_link'] = image_link
+    return context_object
 
 
 class RegisterView(CreateView):
