@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'social_media/css/home_bar.css' %}">
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'social_media/css/home_bar.css' %}">
 {% endblock %}
 {% block content %}
-<header id="home_bar">
-  <a class="default-btn" href="{% url 'social_media:index' %}">Home</a>
-  <a class="default-btn" href="accounts/logout">Logout</a>
-  <a class="default-btn" href="{% url 'social_media:profile' user.id %}">Seu perfil</a>
-  <img src="{{ image_link }}" alt="My profile image" width="125" height="125">
-</header>
+    <header id="home_bar">
+        <p class="slogan" id="begin_home_bar">WikiBook</p>
+        <a href="{% url 'social_media:index' %}">
+            <img src="{% static 'social_media/images/home.png' %}"
+                 alt="Home icon"
+                 width="50"
+                 id="home"
+                 height="50">
+        </a>
+        <div class="dropdown">
+            <img id="my_image"
+                 src="{{ image_link }}"
+                 alt="My profile image"
+                 width="125"
+                 height="125">
+            <div class="dropdown-content">
+                <a class="default-btn" href="{% url 'social_media:profile' user.id %}">Seu perfil</a>
+                <a class="default-btn" href="accounts/logout">Logout</a>
+            </div>
+        </div>
+    </header>
 {% endblock %}
