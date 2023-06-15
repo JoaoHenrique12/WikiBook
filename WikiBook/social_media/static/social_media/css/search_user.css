@@ -18,7 +18,7 @@ input::placeholder {
   color: var(--clr-fg0);
 }
 
-img {
+.display-user img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
