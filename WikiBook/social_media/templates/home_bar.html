@@ -7,7 +7,6 @@
 {% endblock %}
 {% block content %}
     <header id="home_bar">
-        <p class="slogan" id="begin_home_bar">WikiBook</p>
         <a href="{% url 'social_media:index' %}">
             <img src="{% static 'social_media/images/home.png' %}"
                  alt="Home icon"
@@ -15,6 +14,7 @@
                  id="home"
                  height="50">
         </a>
+        <p class="slogan" id="begin_home_bar">WikiBook</p>
         <div class="dropdown">
             <img id="my_image"
                  src="{{ image_link }}"

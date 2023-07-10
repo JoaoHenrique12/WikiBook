@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     {% include "home_bar.html" %}
-    Olá <strong>{{ user.username }}</strong>, este é o seu feed de notícias.
-    <br>
-    <a class="large-btn" href="{% url 'social_media:search_user' %}">Buscar usuarios</a>
+    <aside>
+        <a class="large-btn" href="{% url 'social_media:search_user' %}">Buscar usuarios</a>
+    </aside>
+    <main>
+        Olá <strong>{{ user.username }}</strong>, este é o seu feed de notícias.
+    </main>
 {% endblock %}
