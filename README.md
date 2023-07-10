@@ -13,4 +13,8 @@ Para isto, seria usado django e python para extrair informações da wikipédia.
 - Como autenticar usuarios.
 
 
-![zuck](https://media0.giphy.com/media/kyQglPbIJDxPUPjspN/giphy.gif?cid=ecf05e47wo89bwvc9xu7c6k0abji07hhzn3bw1wvofi0x00a&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+## PS
+
+Não, o autor deste repositório não assistiu o filme: "A rede social" e tentou imitar Mark Zuckerberg.
+
+![zuck](https://veja.abril.com.br/wp-content/uploads/2021/10/zuckerberg-2019.jpg?quality=90&strip=info&w=900&h=600&crop=1)
