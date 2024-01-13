@@ -1,5 +1,7 @@
 # WikiBook
 
+![apresentacao](presentation.gif)
+
 ## Sobre
 
 A ideia inicial era construir uma rede social para pessoas que liam artigos da wikipédia.
