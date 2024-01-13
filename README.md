@@ -63,7 +63,7 @@ Para observar a implementação destes signals vá aos arquivos:
 ### Selenium e Factory Boy com Django 
 
 Foi criado apenas um teste no arquivo [tests.py](WikiBook/social_media/tests.py),
-o objetivo principal era apenas observar como o Selenium seria integrado com o Django.
+o objetivo principal era observar como o Selenium seria integrado com o Django.
 
 Além disto também foi pesquisado sobre a criação de fake objects com
 [Factory Boy](https://factoryboy.readthedocs.io/en/stable/).
